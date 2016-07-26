@@ -40,7 +40,7 @@ public class DbController extends Application{
         });
         Thread thread = Thread.currentThread();
         try{
-            thread.sleep(1000);
+            thread.sleep(3250);
         }catch (InterruptedException e){
             Log.d(this.getClass().getSimpleName(), e.getMessage());
         }finally {

@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_update"
+        android:icon="@drawable/ic_refresh_black_24dp"
+        android:title="@string/action_refresh"
+        app:showAsAction="ifRoom"/>
+
+
+    <item android:id="@+id/action_receive_order"
+        android:icon="@drawable/ic_nfc_black_24dp"
+        android:title="@string/action_receive_order"
+        app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/action_set_seats"
+        android:icon="@drawable/ic_event_seat_black_24dp"
+        android:title="@string/action_set_seats"
+        app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/action_change_local"
+        android:title="@string/action_change_local"
+        app:showAsAction="never"/>
+
+</menu>

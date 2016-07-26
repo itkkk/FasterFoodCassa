@@ -1,10 +1,18 @@
 <resources>
-    <string name="app_name">FasterFoodCassa</string>
+    <string name="app_name">FasterFood Cassa</string>
     <string name="title">&#160;&#160;&#160;FasterFood Cassa</string>
 
     <!--Restaurant Choice-->
     <string name="local_choice">Select your local:</string>
+    <string name="empty_DB">The local DB is empty. Please connect to a network and restart the app</string>
 
     <!--- DB -->
     <string name="DB_Locals"><string name="db_locals">https://earnest-star-132315.firebaseio.com/Locali</string></string>
+
+    <!--Toolbar menu item-->
+    <string name="action_set_seats">Set seats</string>
+    <string name="action_receive_order">Receive a order</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="action_change_local">Change Local</string>
+
 </resources>
