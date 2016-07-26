@@ -32,6 +32,8 @@ public class LocalActivity extends AppCompatActivity {
 
         setupToolbar();
 
+
+
     }
 
     void setupToolbar(){
