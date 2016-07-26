@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FasterFoodCassa</string>
+    <string name="title">&#160;&#160;&#160;FasterFood Cassa</string>
+
+    <!--Restaurant Choice-->
+    <string name="local_choice">Select your local:</string>
+
+    <!--- DB -->
+    <string name="DB_Locals"><string name="db_locals">https://earnest-star-132315.firebaseio.com/Locali</string></string>
+</resources>
