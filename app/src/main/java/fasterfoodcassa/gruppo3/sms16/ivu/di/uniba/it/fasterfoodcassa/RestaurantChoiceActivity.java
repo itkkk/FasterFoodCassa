@@ -15,10 +15,9 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-import fasterfoodcassa.gruppo3.sms16.ivu.di.uniba.it.fasterfoodcassa.LocalScreen.LocalActivity;
+import fasterfoodcassa.gruppo3.sms16.ivu.di.uniba.it.fasterfoodcassa.localscreen.LocalActivity;
 import fasterfoodcassa.gruppo3.sms16.ivu.di.uniba.it.fasterfoodcassa.db.DbController;
 import fasterfoodcassa.gruppo3.sms16.ivu.di.uniba.it.fasterfoodcassa.dbdata.Local;
 import fasterfoodcassa.gruppo3.sms16.ivu.di.uniba.it.fasterfoodcassa.dbdata.LocalsList;
@@ -91,7 +90,6 @@ public class RestaurantChoiceActivity extends AppCompatActivity {
                 modifyLayout(true, false);
                 LocalsList localsList = new DbController().queryLocals(getResources().getString(R.string.DB_Locals));
                 if(localsList != null){
-
                     nameList = new ArrayList<>();
                     locals = localsList.getLocals();
                     if(locals.size() == 0){

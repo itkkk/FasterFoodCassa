@@ -11,6 +11,7 @@ public class Order {
     private String stato;
     private String totale;
     private String catena;
+    private String email;
     List<OrderItem> items = new ArrayList<>();
 
     public String getData() {
@@ -35,6 +36,10 @@ public class Order {
 
     public String getCatena() {
         return catena;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public List<OrderItem> getItems(){
@@ -67,5 +72,9 @@ public class Order {
 
     public void addOrderItem(OrderItem item){
         items.add(item);
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

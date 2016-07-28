@@ -30,4 +30,27 @@
         <item name="android:textColor">@color/grey</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="recyclerRowName">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="recyclerSubTitle">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="recyclerTitle">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="recyclerRowDescription">
+        <item name="android:textSize">15sp</item>
+    </style>
 </resources>

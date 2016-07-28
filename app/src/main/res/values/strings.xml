@@ -7,12 +7,31 @@
     <string name="empty_DB">The local DB is empty. Please connect to a network and restart the app</string>
 
     <!--- DB -->
-    <string name="DB_Locals"><string name="db_locals">https://earnest-star-132315.firebaseio.com/Locali</string></string>
+    <string name="DB_Locals">https://earnest-star-132315.firebaseio.com/Locali</string>
+    <string name="DB_Orders">https://earnest-star-132315.firebaseio.com/Ordini</string>
 
     <!--Toolbar menu item-->
     <string name="action_set_seats">Set seats</string>
     <string name="action_receive_order">Receive a order</string>
     <string name="action_refresh">Refresh</string>
     <string name="action_change_local">Change Local</string>
+
+    <!--Card ordini-->
+    <string name="state">State:&#160;</string>
+    <string name="item">Items:&#160;</string>
+    <string name="totale">Total:&#160;&#160;</string>
+
+    <!--Local-->
+    <string name="no_orders">No orders to display or no network connection.</string>
+
+    <!--NFC-->
+    <string name="price">Price:&#160;</string>
+    <string name="quantity">Quantity:&#160;</string>
+    <string name="payed">You payed:&#160;</string>
+    <string name="not_payed">You have to pay:&#160;</string>
+
+    <!--seats-->
+    <string name="free_seats">Enter the free seats:&#160;</string>
+    <string name="done">Done</string>
 
 </resources>

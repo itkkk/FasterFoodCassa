@@ -75,20 +75,20 @@ public class DbController extends Application{
         }
     }
 
-    public OrderList getOrders(String DBUrl){
+    public OrderList getOrders(String DBUrl, final String localName){
         final OrderList orders = new OrderList();
 
         Firebase orderRef = new Firebase(DBUrl);
         orderRef.keepSynced(true);
 
-        //final String userEmail = FirebaseAuth.getInstance().getCurrentUser().getEmail();
-        orderRef.addValueEventListener(new ValueEventListener() {
+        orderRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 for (DataSnapshot orderSnapshot : snapshot.getChildren()){
-                    String email = (String) orderSnapshot.child("email").getValue();
-                   //if(userEmail.equals(email)){
+                    String name = (String) orderSnapshot.child("locale").getValue();
+                    if(name.equals(localName)){
                         Order order = new Order();
+                        order.setEmail((String) orderSnapshot.child("email").getValue());
                         order.setData((String)orderSnapshot.child("data").getValue());
                         order.setLocale((String)orderSnapshot.child("locale").getValue());
                         order.setNum_items((Long) orderSnapshot.child("items").getValue());
@@ -106,14 +106,85 @@ public class DbController extends Application{
                             }
                         }
                         orders.addOrder(order);
-                    //}
+                    }
                 }
             }
             @Override
             public void onCancelled(FirebaseError firebaseError) { }
         });
 
-        return orders;
+        Thread thread = Thread.currentThread();
+        try{
+            thread.sleep(1000);
+        }catch (InterruptedException e){
+            Log.d(this.getClass().getSimpleName(), e.getMessage());
+        }finally {
+            return orders;
+        }
+    }
+
+    public Order getOrder(String DBUrl, final String pk){
+        Firebase orderRef = new Firebase(DBUrl);
+        final Order order = new Order();
+
+        orderRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                for (DataSnapshot orderSnapshot : snapshot.getChildren()) {
+                    if (orderSnapshot.getKey().equals(pk)) {
+                        order.setEmail((String) orderSnapshot.child("email").getValue());
+                        order.setData((String) orderSnapshot.child("data").getValue());
+                        order.setLocale((String) orderSnapshot.child("locale").getValue());
+                        order.setNum_items((Long) orderSnapshot.child("items").getValue());
+                        order.setStato((String) orderSnapshot.child("stato").getValue());
+                        order.setTotale((String) orderSnapshot.child("totale").getValue());
+                        order.setCatena((String) orderSnapshot.child("catena").getValue());
+                        for (DataSnapshot children : orderSnapshot.getChildren()) {
+                            if (children.hasChildren()) {
+                                OrderItem item = new OrderItem();
+                                item.setNome((String) children.child("nome").getValue());
+                                item.setPrezzo((String) children.child("prezzo").getValue());
+                                item.setQuantita((String) children.child("quantita").getValue());
+                                item.setPosition((Long) children.child("posizione").getValue());
+                                order.addOrderItem(item);
+                            }
+                        }
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+            }
+        });
+
+        Thread thread = Thread.currentThread();
+        try {
+            thread.sleep(500);
+        }catch (InterruptedException e){
+            Log.d(this.getClass().getSimpleName(), e.getMessage());
+        }finally {
+            orderRef.child(pk).child("stato").setValue("chiuso");
+            return order;
+        }
+    }
+
+    public void setSeats(String DBUrl, final String localName, final String seats){
+        Firebase ref = new Firebase(DBUrl);
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot localSnapshot : dataSnapshot.getChildren()) {
+                    String nome = (String) localSnapshot.child("nome").getValue();
+                    if(nome.equals(localName)){
+                        Firebase localRef = localSnapshot.getRef();
+                        localRef.child("posti").setValue(seats);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {}
+        });
     }
 
 }

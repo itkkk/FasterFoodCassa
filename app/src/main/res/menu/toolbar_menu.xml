@@ -6,12 +6,6 @@
         android:title="@string/action_refresh"
         app:showAsAction="ifRoom"/>
 
-
-    <item android:id="@+id/action_receive_order"
-        android:icon="@drawable/ic_nfc_black_24dp"
-        android:title="@string/action_receive_order"
-        app:showAsAction="ifRoom"/>
-
     <item android:id="@+id/action_set_seats"
         android:icon="@drawable/ic_event_seat_black_24dp"
         android:title="@string/action_set_seats"

@@ -1,4 +1,4 @@
-package fasterfoodcassa.gruppo3.sms16.ivu.di.uniba.it.fasterfoodcassa.LocalScreen;
+package fasterfoodcassa.gruppo3.sms16.ivu.di.uniba.it.fasterfoodcassa.localscreen;
 
 import android.content.Context;
 import android.support.v7.widget.ActionMenuView;
