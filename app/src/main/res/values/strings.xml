@@ -29,6 +29,7 @@
     <string name="quantity">Quantity:&#160;</string>
     <string name="payed">You payed:&#160;</string>
     <string name="not_payed">You have to pay:&#160;</string>
+    <string name="error">No internet connection, please retry.</string>
 
     <!--seats-->
     <string name="free_seats">Enter the free seats:&#160;</string>

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.nfc.NdefMessage;
 import android.nfc.NfcAdapter;
 import android.os.Parcelable;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -103,17 +104,22 @@ public class NFCActivity extends AppCompatActivity {
                 NFCRVAdapter adapterNfcRV = new NFCRVAdapter(names,quantities,prices);
                 mOrderRecycler.setAdapter(adapterNfcRV);
 
-                if(order.getStato().equals("aperto"))
-                    txtStringPay.setText(getResources().getString(R.string.not_payed));
-                else
-                    txtStringPay.setText(getResources().getString(R.string.payed));
+                if(order.getStato() != null) {
+                    if (order.getStato().equals("aperto"))
+                        txtStringPay.setText(getResources().getString(R.string.not_payed));
+                    else
+                        txtStringPay.setText(getResources().getString(R.string.payed));
 
-                float tot = 0;
-                for(int i = 0; i < prices.size(); i++){
-                    tot = tot + (Float.parseFloat(prices.get(i)) * Float.parseFloat(quantities.get(i)));
+                    float tot = 0;
+                    for (int i = 0; i < prices.size(); i++) {
+                        tot = tot + (Float.parseFloat(prices.get(i)) * Float.parseFloat(quantities.get(i)));
+                    }
+
+                    txtTotal.setText(String.valueOf(tot) + " €");
                 }
-
-                txtTotal.setText(String.valueOf(tot) + " €");
+                else{
+                    Snackbar.make(findViewById(android.R.id.content), getResources().getString(R.string.error), Snackbar.LENGTH_LONG).show();
+                }
             }
         });
     }
