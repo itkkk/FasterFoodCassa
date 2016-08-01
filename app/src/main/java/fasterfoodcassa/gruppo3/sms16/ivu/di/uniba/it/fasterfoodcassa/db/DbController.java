@@ -54,7 +54,7 @@ public class DbController extends Application{
         Firebase localsRef = new Firebase(DBUrl);
         localsRef.keepSynced(true);
 
-        localsRef.addValueEventListener(new ValueEventListener() {
+        localsRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 for (DataSnapshot localSnapshot : snapshot.getChildren()){
