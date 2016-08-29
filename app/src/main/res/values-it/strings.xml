@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FasterFood Cassa</string>
+    <string name="DB_Locals">https://earnest-star-132315.firebaseio.com/Locali</string>
+    <string name="DB_Orders">https://earnest-star-132315.firebaseio.com/Ordini</string>
+    <string name="action_change_local">Cambia Locale</string>
+    <string name="action_receive_order">Ricevi un ordine</string>
+    <string name="action_refresh">Aggiorna</string>
+    <string name="action_set_seats">Posti liberi</string>
+    <string name="done">Fatto</string>
+    <string name="empty_DB">Il DB locale è vuoto. Connettiti a una rete, grazie</string>
+    <string name="error">Nessuna connessione ad Internet, riprovare grazie.</string>
+    <string name="free_seats"><![CDATA[Inserisci posti liberi: ]]></string>
+    <string name="item"><![CDATA[Prodotti: ]]></string>
+    <string name="local_choice">Scegli il tuo locale:</string>
+    <string name="no_orders">Nessun ordine da mostrare o nessuna connessione di rete.</string>
+    <string name="not_payed"><![CDATA[Devi pagare: ]]></string>
+    <string name="payed"><![CDATA[Hai pagato: ]]></string>
+    <string name="price"><![CDATA[Prz: ]]></string>
+    <string name="quantity"><![CDATA[Quantità: ]]></string>
+    <string name="state"><![CDATA[Stato: ]]></string>
+    <string name="title"><![CDATA[ : : FasterFood Cassa]]></string>
+    <string name="totale"><![CDATA[Totale: ]]></string>
+</resources>

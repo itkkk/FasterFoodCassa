@@ -147,7 +147,7 @@ public class LocalActivity extends AppCompatActivity {
                             OrderItem item = order.getItems().get(i);
                             names.add(item.getNome());
                             quantitites.add(item.getQuantita());
-                            prices.add(item.getQuantita());
+                            prices.add(item.getPrezzo());
                         }
                         Bundle bundle = new Bundle();
                         bundle.putStringArrayList("names",names);
