@@ -78,7 +78,6 @@ public class RestaurantChoiceActivity extends AppCompatActivity {
 
     //inizializza toolbar
     private void setupToolbar(){
-        //myToolbar.setLogo(R.mipmap.ic_launcher);
         setSupportActionBar(myToolbar);
     }
 
